@@ -1,0 +1,39 @@
+/* Global theme variables with auto light/dark via prefers-color-scheme */
+
+/* Light theme (default) */
+:root {
+  --bg: #f8fafc;         /* background */
+  --text: #111827;       /* text */
+  --card: #ffffff;       /* card surfaces */
+  --border: #e5e7eb;     /* borders/dividers */
+
+  /* Buttons */
+  --button-bg: #2563eb;  /* primary button background */
+  --button-text: #ffffff;/* primary button text */
+
+  /* Extra (existing usage) */
+  --muted: #6b7280;
+  --primary: #2563eb;
+
+  /* Let UA components follow light scheme by default; toggles with media query below */
+  color-scheme: light;
+}
+
+/* Dark theme overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #090b0f;
+    --text: #e5e7eb;
+    --card: #000000;
+    --border: #1f2937;
+
+    --button-bg: #3b82f6;
+    --button-text: #0b1220;
+
+    --muted: #9ca3af;
+    --primary: #3b82f6;
+
+  /* Hint to the browser for dark form controls, scrollbars, etc. */
+  color-scheme: dark;
+  }
+}
