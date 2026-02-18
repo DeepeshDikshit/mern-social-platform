@@ -9,41 +9,23 @@ import cors from "cors"
 
 const app = express()
 
-// CORS configuration - allow both localhost:5173 and localhost:5174 for development
-const allowedOrigins = [
-  "http://localhost:5173",
-  "http://localhost:5174",
-  "http://localhost:5175",
-  "http://localhost:5176",
-]
-
+// ✅ TEMPORARY OPEN CORS (Best during deployment phase)
 app.use(cors({
-    origin: (origin, callback) => {
-        // Allow requests with no origin (mobile apps, curl requests)
-        if (!origin) return callback(null, true)
-        
-        if (allowedOrigins.includes(origin)) {
-            return callback(null, true)
-        } else {
-            const msg = 'CORS policy: this origin is not allowed'
-            return callback(new Error(msg))
-        }
-    },
+    origin: true,
     credentials: true
 }))
 
 app.use(express.json())
 app.use(cookieParser())
 
-
 app.get("/", (req, res) => {
     res.send("Welcome to the API")
 })
+
 app.use('/auth', authRoutes)
 app.use('/posts', postRoutes)
 app.use('/chat', chatRoutes)
 app.use('/ai', aiChatRoutes)
 app.use('/users', userRoutes)
-
 
 export default app
