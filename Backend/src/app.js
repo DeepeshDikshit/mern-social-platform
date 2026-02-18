@@ -23,8 +23,8 @@ app.use(cors({
 app.use(express.json())
 app.use(cookieParser())
 
-// ✅ Serve static files
-app.use(express.static(path.join(__dirname, "public")))
+// ✅ Serve static files safely
+app.use(express.static(path.join(__dirname, "../public")))
 
 app.get("/", (req, res) => {
     res.send("Welcome to the API")
@@ -36,8 +36,8 @@ app.use('/chat', chatRoutes)
 app.use('/ai', aiChatRoutes)
 app.use('/users', userRoutes)
 
-// ✅ React fallback
-app.get("*", (req, res) => {
+// ✅ SAFE fallback (NO wildcard bug)
+app.use((req, res) => {
     res.sendFile(path.join(__dirname, "../public/index.html"))
 })
 
