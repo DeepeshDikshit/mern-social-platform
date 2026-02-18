@@ -16,8 +16,12 @@ const app = express()
 
 // ✅ TEMP CORS
 app.use(cors({
-    origin: true,
-    credentials: true
+    origin: [
+ "http://localhost:5173",
+ "https://mern-social-platform.onrender.com"
+],
+credentials: true
+
 }))
 
 app.use(express.json())

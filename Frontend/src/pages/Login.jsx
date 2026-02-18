@@ -33,9 +33,9 @@ export default function Login() {
 
       navigate("/");
     } catch (err) {
-      console.error("Login failed:", err);
-      setError("Invalid email or password");
-    }
+  setError(err.response?.data?.message || "Login failed");
+}
+
   }
 
   return (
