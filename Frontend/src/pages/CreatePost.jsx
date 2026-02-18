@@ -55,7 +55,7 @@ export default function CreatePost() {
     formData.append('image', imageFile)
     formData.append('mentions', mentions)
 
-    axios.post("http://localhost:3000/posts", formData, {
+    axios.post("http://https://mern-social-platform.onrender.com:3000/posts", formData, {
       withCredentials: true,
       headers: {
         'Authorization': `Bearer ${token}`

@@ -23,7 +23,7 @@ export default function Profile() {
 
                 // Fetch user posts
                 const postsRes = await axios.get(
-                    "http://localhost:3000/posts/user/profile",
+                    "http://https://mern-social-platform.onrender.com:3000/posts/user/profile",
                     {
                         headers: { Authorization: `Bearer ${token}` },
                     }

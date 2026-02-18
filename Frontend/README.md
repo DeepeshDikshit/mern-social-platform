@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-- App runs at http://localhost:5173
+- App runs at http://https://mern-social-platform.onrender.com:5173
 - Routes available:
   - /register
   - /login

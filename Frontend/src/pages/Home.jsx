@@ -27,7 +27,7 @@ export default function Home() {
     const fetchPosts = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:3000/posts",
+          "http://https://mern-social-platform.onrender.com:3000/posts",
           {
             params: { skip: 0, limit: 20 },
           }
