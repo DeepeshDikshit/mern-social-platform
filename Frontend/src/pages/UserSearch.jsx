@@ -24,7 +24,7 @@ export default function UserSearch() {
       // Placeholder: Backend search endpoint (to be implemented)
       // For now, mock empty results to show empty state
       const res = await axios.get(
-        `http://https://mern-social-platform.onrender.com:3000/users/search?q=${encodeURIComponent(searchQuery)}`,
+        `https://mern-social-platform.onrender.com:3000/users/search?q=${encodeURIComponent(searchQuery)}`,
         token ? { headers: { Authorization: `Bearer ${token}` } } : {}
       );
 

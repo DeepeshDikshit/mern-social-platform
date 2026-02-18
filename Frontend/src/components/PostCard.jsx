@@ -36,7 +36,7 @@ export default function PostCard({
 
     try {
       const res = await axios.post(
-        "http://https://mern-social-platform.onrender.com:3000/posts/like",
+        "https://mern-social-platform.onrender.com:3000/posts/like",
         { post: id },
         {
           headers: {
@@ -89,7 +89,7 @@ export default function PostCard({
 
     try {
       const res = await axios.post(
-        "http://https://mern-social-platform.onrender.com:3000/posts/comment",
+        "https://mern-social-platform.onrender.com:3000/posts/comment",
         { post: id, text: commentText },
         {
           headers: {
@@ -132,7 +132,7 @@ export default function PostCard({
 
     try {
       await axios.delete(
-        `http://https://mern-social-platform.onrender.com:3000/posts/${id}`,
+        `https://mern-social-platform.onrender.com:3000/posts/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
