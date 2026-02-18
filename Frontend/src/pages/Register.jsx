@@ -27,7 +27,7 @@ export default function Register() {
     }
 
     try {
-      await axios.post("https://mern-social-platform.onrender.com:3000/auth/register", {
+      await axios.post("https://mern-social-platform.onrender.com/auth/register", {
         username: form.username,
         email: form.email,
         password: form.password,

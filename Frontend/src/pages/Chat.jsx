@@ -136,7 +136,7 @@ export default function Chat() {
 
             try {
                 const res = await axios.get(
-                    "https://mern-social-platform.onrender.com:3000/ai/conversations",
+                    "https://mern-social-platform.onrender.com/ai/conversations",
                     {
                         headers: { Authorization: `Bearer ${token}` },
                     }
@@ -168,7 +168,7 @@ export default function Chat() {
 
         try {
             const res = await axios.get(
-                `https://mern-social-platform.onrender.com:3000/ai/history/${convId}`,
+                `https://mern-social-platform.onrender.com/ai/history/${convId}`,
                 {
                     headers: { Authorization: `Bearer ${token}` },
                 }
@@ -210,7 +210,7 @@ export default function Chat() {
 
         try {
             await axios.patch(
-                `https://mern-social-platform.onrender.com:3000/ai/conversation/${renameConvId}`,
+                `https://mern-social-platform.onrender.com/ai/conversation/${renameConvId}`,
                 { title: newTitle },
                 {
                     headers: { Authorization: `Bearer ${token}` },
@@ -249,7 +249,7 @@ export default function Chat() {
 
         try {
             await axios.delete(
-                `https://mern-social-platform.onrender.com:3000/ai/conversation/${convId}`,
+                `https://mern-social-platform.onrender.com/ai/conversation/${convId}`,
                 {
                     headers: { Authorization: `Bearer ${token}` },
                 }
@@ -315,7 +315,7 @@ export default function Chat() {
             }
 
             const res = await axios.post(
-                "https://mern-social-platform.onrender.com:3000/ai/chat",
+                "https://mern-social-platform.onrender.com/ai/chat",
                 requestBody,
                 {
                     headers: { Authorization: `Bearer ${token}` },

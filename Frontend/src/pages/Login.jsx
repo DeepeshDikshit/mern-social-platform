@@ -18,7 +18,7 @@ export default function Login() {
 
     try {
       const res = await axios.post(
-        "https://mern-social-platform.onrender.com:3000/auth/login",
+        "https://mern-social-platform.onrender.com/auth/login",
         form
       );
 
