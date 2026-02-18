@@ -6,10 +6,15 @@ import chatRoutes from "./routes/chat.routes.js"
 import aiChatRoutes from "./routes/aichat.routes.js"
 import userRoutes from "./routes/user.routes.js"
 import cors from "cors"
-const path = require('path')
+import path from "path"
+import { fileURLToPath } from "url"
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
 const app = express()
 
-// ✅ TEMPORARY OPEN CORS (Best during deployment phase)
+// ✅ TEMP CORS
 app.use(cors({
     origin: true,
     credentials: true
@@ -17,8 +22,9 @@ app.use(cors({
 
 app.use(express.json())
 app.use(cookieParser())
-app.use(express.static(path.join(__dirname, 'public'))) // Serve static files from the 'public' directory
 
+// ✅ Serve static files
+app.use(express.static(path.join(__dirname, "public")))
 
 app.get("/", (req, res) => {
     res.send("Welcome to the API")
@@ -30,8 +36,9 @@ app.use('/chat', chatRoutes)
 app.use('/ai', aiChatRoutes)
 app.use('/users', userRoutes)
 
-app.get("*name", (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/index.html'))
+// ✅ React fallback
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/index.html"))
 })
 
 export default app
